@@ -4,8 +4,6 @@ import { Ionicons } from "@expo/vector-icons";
 import Home from "./Pages/Home";
 import Schedule from "./Pages/Schedule";
 import History from "./Pages/History";
-import RegisterStudent from "./Pages/RegisterStudent";
-import RegisterClass from "./Pages/RegisterClass";
 
 const Tab = createBottomTabNavigator();
 
@@ -32,17 +30,12 @@ export default function StudentRoutes() {
             iconName = "calendar";
           } else if (route.name === "Histórico") {
             iconName = "time";
-          } else if (route.name === "Novo Aluno") {
-            iconName = "person-add";
-          } else if (route.name === "Registrar Aula") {
-            iconName = "book";
-          }
-
+          } 
           return <Ionicons name={iconName} size={22} color={color} />;
         },
         tabBarLabelStyle: {
           fontSize: 11,
-          fontWeight: "5000",
+          fontWeight: "500",
           marginBottom: 4,
         },
       })}
@@ -50,8 +43,6 @@ export default function StudentRoutes() {
       <Tab.Screen name="Início" component={Home} />
       <Tab.Screen name="Horários" component={Schedule} />
       <Tab.Screen name="Histórico" component={History} />
-      <Tab.Screen name="Novo Aluno" component={RegisterStudent} />
-      <Tab.Screen name="Registrar Aula" component={RegisterClass} />
     </Tab.Navigator>
   );
 }
